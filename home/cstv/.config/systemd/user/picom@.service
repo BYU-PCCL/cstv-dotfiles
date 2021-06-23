@@ -1,0 +1,9 @@
+[Unit]
+Description=Compositor for Xorg(?)
+After=X11@%i.target
+Requires=X11@%i.target
+[Service]
+Environment=DISPLAY=%I
+ExecStart=picom --experimental-backends
+[Install]
+RequiredBy=X11@%i.target

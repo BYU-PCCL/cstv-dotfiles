@@ -1,0 +1,10 @@
+[Unit]
+Description=Cycles through available experiences and communicates with web api
+After=X11@%i.target controller@%i.service
+Requisite=X11@%i.target controller@%i.service
+[Service]
+Environment=DISPLAY=%I
+ExecStart=sh -c "sleep 6; python3 ~/dev/cstv-controller/timer/timer.py"
+Restart=always
+[Install]
+WantedBy=X11@%i.target

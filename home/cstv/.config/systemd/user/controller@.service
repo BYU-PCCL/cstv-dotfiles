@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs web api
+After=X11@%i.target placard@%i.service
+Requisite=X11@%i.target placard@%i.service
+[Service]
+Environment=DISPLAY=%I
+ExecStart=sh -c "cd ~/dev/cstv-controller; FLASK_APP=cstv_controller/api.py python3 -m flask run -h 0.0.0.0"
+Restart=always
+[Install]
+WantedBy=X11@%i.target
