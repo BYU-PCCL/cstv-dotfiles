@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# window manager
-
 # Allow root permission to X server so Docker can use it
 # TODO: Is this insecure? Is there a better alternative?
 xhost +local:root
