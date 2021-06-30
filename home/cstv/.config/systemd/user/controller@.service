@@ -4,7 +4,8 @@ After=X11@%i.target placard@%i.service
 Requisite=X11@%i.target placard@%i.service
 [Service]
 Environment=DISPLAY=%I
-ExecStart=sh -c "cd ~/dev/cstv-controller; FLASK_APP=cstv_controller/api.py python3 -m flask run -h 0.0.0.0"
+Environment=PORT=8000
+ExecStart=python3 -m gunicorn footron_controller.api:flask_app
 Restart=always
 [Install]
 WantedBy=X11@%i.target
