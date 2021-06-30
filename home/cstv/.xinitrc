@@ -12,7 +12,6 @@ xset -dpms
 # Set background to black
 hsetroot -solid '#000000'
 
-
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     printf "XDG_RUNTIME_DIR isn't set\n" >&2
     exit 6
