@@ -2,6 +2,10 @@
 
 # window manager
 
+# Allow root permission to X server so Docker can use it
+# TODO: Is this insecure? Is there a better alternative?
+xhost +local:root
+
 # Disable any form of screen saver / screen blanking / power management
 xset s off
 xset s noblank
