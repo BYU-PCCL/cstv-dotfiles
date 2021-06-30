@@ -1,5 +1,5 @@
 [Unit]
-Description=Cycles through available experiences and communicates with web api
+Description=Automatic cycle timer for controller
 After=X11@%i.target controller@%i.service
 Requisite=X11@%i.target controller@%i.service
 [Service]

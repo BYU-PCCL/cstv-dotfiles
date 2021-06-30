@@ -1,5 +1,5 @@
 [Unit]
-Description=Displays experience description and qr code to controls
+Description=Placard persistent info sidebar
 After=X11@%i.target wallwm@%i.service
 Requisite=X11@%i.target wallwm@%i.service
 [Service]

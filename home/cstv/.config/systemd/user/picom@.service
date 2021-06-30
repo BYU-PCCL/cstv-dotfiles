@@ -1,5 +1,5 @@
 [Unit]
-Description=Compositor for Xorg(?)
+Description=Picom Xorg compositor
 After=X11@%i.target
 Requires=X11@%i.target
 [Service]

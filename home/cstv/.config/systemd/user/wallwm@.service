@@ -1,5 +1,5 @@
 [Unit]
-Description=The window manager for the wall
+Description=X client enforcing layout
 After=X11@%i.target picom@%i.service
 Requires=X11@%i.target picom@%i.service
 [Service]

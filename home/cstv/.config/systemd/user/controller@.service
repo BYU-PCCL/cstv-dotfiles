@@ -1,5 +1,5 @@
 [Unit]
-Description=Runs web api
+Description=Controller REST API
 After=X11@%i.target placard@%i.service
 Requisite=X11@%i.target placard@%i.service
 [Service]
