@@ -5,6 +5,7 @@ Requisite=X11@%i.target placard@%i.service
 [Service]
 Environment=DISPLAY=%I
 Environment=FT_VIDEO_DEV_0=046d:085e
+EnvironmentFile=%h/.config/footron/env
 ExecStart=%h/.local/bin/uvicorn footron_controller.api:fastapi_app --port 8000 --host 0.0.0.0
 Restart=always
 [Install]
