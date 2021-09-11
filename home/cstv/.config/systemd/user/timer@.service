@@ -2,6 +2,8 @@
 Description=Automatic cycle timer for controller
 After=X11@%i.target controller@%i.service
 Requisite=X11@%i.target controller@%i.service
+StartLimitIntervalSec=3
+StartLimitBurst=10
 [Service]
 Environment=DISPLAY=%I
 ExecStart=python3 -mfootron_timer
