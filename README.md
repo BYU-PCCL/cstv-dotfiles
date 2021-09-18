@@ -1,4 +1,4 @@
-# Setup
+# Footron Controller Setup
 
 Base system is Ubuntu 20.04 Server. For best results, try to follow each section in order.
 
