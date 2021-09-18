@@ -1,0 +1,9 @@
+[Unit]
+Description=GPU bug workaround reboot timer
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Unit=reboot.target
+
+[Install]
+WantedBy=multi-user.target
