@@ -1,8 +1,6 @@
 # Setup
 
-Base system is Ubuntu 20.04 Server.
-
-Follow each of these sections in order.
+Base system is Ubuntu 20.04 Server. For best results, try to follow each section in order.
 
 ## BIOS setup
 
