@@ -4,7 +4,7 @@ After=X11@%i.target wallwm@%i.service
 Requisite=X11@%i.target wallwm@%i.service
 [Service]
 Environment=DISPLAY=%I
-ExecStart=sh -c "sleep 3; npm --prefix ~/dev/cstv-placard start"
+ExecStart=%h/.local/bin/footron-placard
 Restart=always
 [Install]
 WantedBy=X11@%i.target
