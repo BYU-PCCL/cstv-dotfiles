@@ -2,8 +2,7 @@
 Description=GPU bug workaround reboot timer
 
 [Timer]
-OnCalendar=*-*-* 03:00:00
-Unit=reboot.target
+OnCalendar=*-*-* 3:00:00
 
 [Install]
 WantedBy=multi-user.target

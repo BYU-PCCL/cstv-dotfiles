@@ -1,0 +1,7 @@
+[Unit]
+Description=Reboot
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/reboot now
+
