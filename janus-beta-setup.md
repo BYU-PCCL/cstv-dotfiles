@@ -8,7 +8,7 @@ sudo apt-get install libmicrohttpd-dev libjansson-dev libnice-dev libssl-dev lib
 
 ### Build libsrtp
 
-```
+```sh
 wget https://github.com/cisco/libsrtp/archive/v2.2.0.tar.gz
 tar xfv v2.2.0.tar.gz
 cd libsrtp-2.2.0
@@ -18,7 +18,7 @@ make shared_library && sudo make install
 
 ## Build
 
-```
+```sh
 git clone git://github.com/meetecho/janus-gateway.git
 
 cd janus-gateway
@@ -30,6 +30,31 @@ sh autogen.sh
 make && sudo make install
 sudo make configs
 ```
+
+## Config
+
+In streaming plugin jcfg (find in /opt/janus/etc/, I think), this should be the only streaming setup
+```
+ft-audio: {
+	type = "rtp"
+	id = 1
+	description = "Footron Audio"
+	audio = true
+	audioport = 5002
+	audiopt = 111
+	audiortpmap = "opus/48000/2"
+}
+```
+
+## GStreamer setup
+
+Find default monitor source: `pacmd list-sources | grep -e "*\|name:"` (find first index with asterisk before it, name below it is inside angle brackets)
+
+```sh
+gst-launch-1.0 pulsesrc device=$DEFAULT_DEVICE ! audioresample ! opusenc bitrate=20000 ! rtpopuspay ! udpsink host=0.0.0.0 port=5002
+```
+
+Where `$DEFAULT_DEVICE` is the name of the device you found in the last step.
 
 ## Run
 
