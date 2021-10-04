@@ -37,6 +37,8 @@ There are some issues with certificates, but we need to figure out how to convin
 
 I think the problem with certificates comes down to permission on the snakeoil certificate in /etc/ssh/private. But my guess is it's a bad idea to make it visible to everyone, so while that seems to work, we should find out what the "right" solution is—maybe we just use certbot?
 
+This link might have some insight: https://webrtc.ventures/2021/08/hardened-janus-gateway/
+
 ```
 /opt/janus/bin/janus
 ```
