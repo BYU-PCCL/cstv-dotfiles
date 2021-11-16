@@ -78,6 +78,15 @@ unresolved GPU crashes from rebooting the machine during the day.
   - `systemctl enable gpu-reboot.timer`
   - `systemctl start gpu-reboot.timer`
 
+## Magewell EDID setup service
+
+- Copy `etc/systemd/system/set-capture-edid.service` from dotfiles to `/etc/systemd/system/`
+- Enable and start the service
+  ```
+  systemctl enable set-capture-edid.service
+  systemctl start set-capture-edid.service
+  ```
+
 ## Silent boot
 
 The advice here is based on [this page](https://wiki.archlinux.org/title/Silent_boot) in the Arch Linux wiki.

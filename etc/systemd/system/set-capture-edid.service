@@ -1,0 +1,9 @@
+[Unit]
+Description=Set EDID for capture card
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mwcap-control --edid-load /home/ft/edid.bin 0:0
+
+[Install]
+WantedBy=multi-user.target
