@@ -78,7 +78,20 @@ unresolved GPU crashes from rebooting the machine during the day.
   - `systemctl enable gpu-reboot.timer`
   - `systemctl start gpu-reboot.timer`
 
-## Magewell EDID setup service
+## Magewell setup
+
+### Driver
+
+- Download and unzip the newest Magewell Pro Capture driver (this link might not be the newest, you can find the newest download link
+  by downloading from https://www.magewell.com/downloads/pro-capture#/driver/linux-x86 and checking the URL)
+  ```
+  curl -LO https://www.magewell.com/files/drivers/ProCaptureForLinux_4236.tar.gz
+  tar xvf ProCaptureForLinux_4236.tar.gz
+  cd ProCaptureForLinux_4236
+  ./install.sh
+  ```
+
+### EDID startup service
 
 - Copy `etc/systemd/system/set-capture-edid.service` from dotfiles to `/etc/systemd/system/`
 - Enable and start the service
@@ -86,6 +99,16 @@ unresolved GPU crashes from rebooting the machine during the day.
   systemctl enable set-capture-edid.service
   systemctl start set-capture-edid.service
   ```
+
+### Copy footron-capture-shell, install dependencies
+
+- Install dependencies
+  ```sh
+  sudo apt install libglfw3 libglew2.1
+  ```
+- Copy footron-capture-shell binary to `~/.local/share/footron/bin/footron-capture-shell` (you will have to build it, if you don't have a copy of this binary, pester @vinhowe about how to do this)
+  - Make sure it has executable permissions (`chmod +x`)
+
 
 ## Silent boot
 
