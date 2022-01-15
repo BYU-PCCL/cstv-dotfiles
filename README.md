@@ -107,13 +107,13 @@ Do _not_ do the following unless you've tried everything else and found that not
 ## Docker
 
 - [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
-- Follow steps [here](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) to make it work for all users
-- [Install Docker Nvidia runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 - Create `docker` group and add `remote` and `ft` users:
   ```sh
   sudo usermod -aG docker remote
   sudo usermod -aG docker ft
   ```
+  - Eventually we should see if we can get Docker's [rootless mode](https://docs.docker.com/engine/security/rootless/) working because it looks like putting `ft` in the `docker` group might cancel out our token efforts to make the `ft` have as few privileges as possible.
+- [Install Docker Nvidia runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 - [Configure /etc/docker/daemon.json `log-driver: "journald"`](https://docs.docker.com/config/containers/logging/configure/)
 
 ## GPU bug reboot timer
