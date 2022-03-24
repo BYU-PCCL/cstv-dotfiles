@@ -28,7 +28,7 @@ This section (which may be incomplete) assumes you're configuring an Asus Pro WS
 
 - Update repositories and upgrade packages before doing anything else: `sudo apt update && sudo apt upgrade`
 - Set Vim as default editor (useful for `sudoedit`, which you'll use a lot): `sudo update-alternatives --set editor /usr/bin/vim.basic`
-- Install Xorg: `sudo apt install xorg-server-core`
+- Install Xorg: `sudo apt install xorg --no-install-recommends --no-install-suggests`
 - Install Python: `sudo apt install python3 python3-pip`
 - Build and install [`hsetroot`](https://github.com/himdel/hsetroot)
   ```sh
@@ -39,7 +39,7 @@ This section (which may be incomplete) assumes you're configuring an Asus Pro WS
   # Clone and cd into hsetroot repository
   git clone https://github.com/himdel/hsetroot.git && cd hsetroot
   # Build and install
-  make && make install
+  make && sudo make install
   ```
 - Build and install picom (X compositor) (Steps based on https://www.linuxfordevices.com/tutorials/linux/picom)
   ```sh
@@ -69,6 +69,9 @@ This section (which may be incomplete) assumes you're configuring an Asus Pro WS
     curl -L https://fonts.google.com/download?family=Work%20Sans -o work-sans.zip
     # Montserrat (placard title font)
     curl -L https://fonts.google.com/download?family=Montserrat -o montserrat.zip
+    # Unzip fonts
+    unzip -d work-sans work-sans.zip
+    unzip -d montserrat montserrat.zip
     # Make system font directories and copy files
     sudo mkdir /usr/share/fonts/truetype/{work-sans,montserrat}
     sudo cp montserrat/static/* /usr/share/fonts/truetype/montserrat/
@@ -115,6 +118,37 @@ Do _not_ do the following unless you've tried everything else and found that not
   - Eventually we should see if we can get Docker's [rootless mode](https://docs.docker.com/engine/security/rootless/) working because it looks like putting `ft` in the `docker` group might cancel out our token efforts to make the `ft` have as few privileges as possible.
 - [Install Docker Nvidia runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 - [Configure /etc/docker/daemon.json `log-driver: "journald"`](https://docs.docker.com/config/containers/logging/configure/)
+  - To apply this immediately, restart Docker with `sudo systemctl restart docker`
+
+## Set default systemd target
+
+One of the steps before this sometimes changes the default systemctl target to `graphical.target`.
+
+You can check this first if you like:
+
+```sh
+systemctl get-default
+```
+
+If the output of this command is `multi-user.target`, you can skip to the next step. Otherwise, change the default target.
+
+```sh
+systemctl set-default multi-user.target
+```
+
+You will need to reboot at some point for this to take effect.
+
+```sh
+sudo reboot
+```
+
+## Disable unattended upgrades
+
+Run the following command and select `<No>`:
+
+```sh
+sudo dpkg-reconfigure unattended-upgrades
+```
 
 ## GPU bug reboot timer
 
