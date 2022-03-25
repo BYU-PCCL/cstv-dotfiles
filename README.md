@@ -235,6 +235,21 @@ Do all of these steps as the `ft` user:
   - If instead you decide to copy from another machine (as we have done in the past), use `rsync -azP ./*. ft@<hostname>:~/`. We use `rsync -azP` here because the -a flag includes the `-l` flag, which will preserve symlinks. This is important for us.
 - Reload daemon: `systemctl --user daemon-reload`
 
+## (Staging only) API setup
+
+As `ft`:
+
+- Install the API package:
+  ```sh
+  pip install --user --upgrade git+https://github.com/BYU-PCCL/footron-api.git
+  ```
+- Copy files from staging-only/ to / on the target machine
+- Create a file at `~/.config/footron-api/env`:
+  ```ini
+  FT_BASE_URL=http://<network visible hostname>
+  FT_CONTROLLER_URL=http://localhost:8000
+  ```
+
 ## TODO
 
 - API setup, which is as described in api-dotfiles unless the target is a staging machine that hosts the API and the controller
