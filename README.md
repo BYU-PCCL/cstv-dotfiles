@@ -250,6 +250,10 @@ As `ft`:
   FT_CONTROLLER_URL=http://localhost:8000
   ```
 
+## TODO: (Staging only) Nginx setup
+
+## TODO: (Staging only) Web build
+
 ## TODO
 
 - API setup, which is as described in api-dotfiles unless the target is a staging machine that hosts the API and the controller
