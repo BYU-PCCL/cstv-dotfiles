@@ -1,0 +1,3 @@
+FT_ROLLBAR="CONFIGURE THIS IN ~/.config/env"
+FT_CAPTURE_API_URL="CONFIGURE THIS IN ~/.config/env"
+FT_MSG_URL="CONFIGURE THIS IN ~/.config/env"
