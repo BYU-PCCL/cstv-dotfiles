@@ -235,6 +235,14 @@ Do all of these steps as the `ft` user:
   - If instead you decide to copy from another machine (as we have done in the past), use `rsync -azP ./*. ft@<hostname>:~/`. We use `rsync -azP` here because the -a flag includes the `-l` flag, which will preserve symlinks. This is important for us.
 - Reload daemon: `systemctl --user daemon-reload`
 
+## (Production only) Production SSH safety step
+
+We have a banner that will display at the beginning of any SSH session to reduce the incidence rate of footguns.
+
+As `remote`, copy files from `production-only/etc/ssh/` from dotfiles to `/etc/ssh/`.
+
+You will need to include the argument `-o SetEnv="FT_PRODUCTION=<(zero-padded date)(zero-padded 24-hour)>` on ssh/scp connections. For example, on the 10th of any month at 5 PM, this argument is `-o SetEnv="FT_PRODUCTION=1017`
+
 ## (Staging only) API setup
 
 As `ft`:
