@@ -4,6 +4,6 @@ After=X11@%i.target
 Requires=X11@%i.target
 [Service]
 Environment=DISPLAY=%I
-ExecStart=picom --experimental-backends
+ExecStart=picom --experimental-backends --xrender-sync-fence
 [Install]
 RequiredBy=X11@%i.target

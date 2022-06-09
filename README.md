@@ -101,6 +101,11 @@ This section (which may be incomplete) assumes you're configuring an Asus Pro WS
   sudo usermod -aG video remote
   sudo usermod -aG video ft
   ```
+- Add the following as a potential optimization for Picom:
+  ```sh
+  nvidia-settings -a 'AllowFlipping=0'
+  nvidia-settings --load-config-only
+  ```
 
 Do _not_ do the following unless you've tried everything else and found that nothing works--I'm not sure this actually fixes anything for us but it's useful for reference:
 
