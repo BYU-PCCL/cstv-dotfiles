@@ -16,5 +16,5 @@ fi
 if [[ -z "$SSH_ORIGINAL_COMMAND" ]]; then
   exec /bin/bash
 else
-  exec $SSH_ORIGINAL_COMMAND
+  exec /bin/bash -c "$SSH_ORIGINAL_COMMAND"
 fi
