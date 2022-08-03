@@ -1,0 +1,7 @@
+[Unit]
+Description=Pointcloud server
+[Service]
+ExecStart=python3 -mfootron_pc_server
+Restart=always
+[Install]
+WantedBy=X11@%i.target
