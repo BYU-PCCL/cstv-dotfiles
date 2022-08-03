@@ -234,6 +234,7 @@ Do all of these steps as the `ft` user:
 - Install packages:
   - `pip install --user --upgrade git+https://github.com/BYU-PCCL/footron-wm.git`
   - `pip install --user --upgrade git+https://github.com/BYU-PCCL/footron-controller.git`
+  - `pip install --user --upgrade git+https://github.com/BYU-PCCL/footron-pc-server.git`
 - Follow [controller setup instructions](https://github.com/BYU-PCCL/footron-controller/blob/main/README.md)
   - At this point, you will need to copy the experiences you want to `~/.local/share/footron/experiences`, which won't yet exist. This should probably be better documented but we might not continue to use the system we use now.
 
