@@ -179,6 +179,14 @@ The advice here is based on [this page](https://wiki.archlinux.org/title/Silent_
 - Copy `etc/sysctl.d/20-quiet-printk.conf` to corresponding path on target machine
 - Run `TERM=linux sudo sh -c "setterm -cursor on >> /etc/issue"` to keep cursor on terminal
 
+## RealSense camera setup
+
+- [ ] Install RealSense dependencies
+  ```sh
+  sudo apt install libssl-dev libusb-1.0-0-dev libudev-dev pkg-config
+  ```
+- [ ] Run [this script](https://github.com/IntelRealSense/librealsense/blob/master/scripts/setup_udev_rules.sh)
+
 ## Magewell setup
 
 ### Driver
