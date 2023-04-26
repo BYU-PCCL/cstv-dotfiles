@@ -283,8 +283,8 @@ NOTE: in order to run these commands, you must be SSH'd in as the "ft" user.  It
 - Ours in this example is 1
 
 ```pacmd set-default-sink 1
-
-pacmd set-sink-volume 1 55536```
+pacmd set-sink-volume 1 55536
+```
 
 - second argument is a boolean, 0/1
 
