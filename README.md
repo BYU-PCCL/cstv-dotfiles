@@ -181,11 +181,11 @@ The advice here is based on [this page](https://wiki.archlinux.org/title/Silent_
 
 ## RealSense camera setup
 
-- [ ] Install RealSense dependencies
+- Install RealSense dependencies
   ```sh
   sudo apt install libssl-dev libusb-1.0-0-dev libudev-dev pkg-config
   ```
-- [ ] Run [this script](https://github.com/IntelRealSense/librealsense/blob/master/scripts/setup_udev_rules.sh)
+- Run [this script](https://github.com/IntelRealSense/librealsense/blob/master/scripts/setup_udev_rules.sh)
 
 ## Magewell setup
 
