@@ -278,17 +278,22 @@ NOTE: in order to run these commands, you must be SSH'd in as the "ft" user.  It
 
 - Find correct sink (HDMI output)
 
-```pacmd list-sinks```
+```
+pacmd list-sinks
+```
 
 - Ours in this example is 1
 
-```pacmd set-default-sink 1
+```
+pacmd set-default-sink 1
 pacmd set-sink-volume 1 55536
 ```
 
 - second argument is a boolean, 0/1
 
-```pacmd set-sink-mute 1 1```
+```
+pacmd set-sink-mute 1 1
+```
 
 ## TODO: (Staging only) Nginx setup
 
